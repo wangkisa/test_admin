@@ -1,0 +1,25 @@
+spring.h2.console.enabled: true
+#spring:
+#  profiles:
+#    active: dev
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        use_sql_comments: false
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+        order_updates: true
+
+server:
+  port: 8081
