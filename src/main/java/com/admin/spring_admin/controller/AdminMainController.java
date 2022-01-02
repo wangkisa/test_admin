@@ -1,33 +1,41 @@
 package com.admin.spring_admin.controller;
 
 import com.admin.spring_admin.service.AdminCommonIF;
-import com.admin.spring_admin.service.commonImpl.AdminCommonServiceImpl;
+//import com.admin.spring_admin.service.commonImpl.AdminCommonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping(path="/admin")
 public class AdminMainController {
 
-    @GetMapping("/admin")
+    @GetMapping("")
     public String admin_index() {
         return "/common/login";
     }
 
-    @GetMapping("/admin_login")
-    public String admin_login() {
+    @GetMapping("/perform_login")
+    public String perform_login() {
         System.out.println("call admin_login()");
-        return "redirect:userMainPage";
+        return "redirect:/admin/main";
 //        if (adminCommonService.isAuthenticated()) {
 //            return "redirect:userMainPage";
 //        }
 //        return "/common/login";
     }
 
-    @GetMapping("/userMainPage")
+    @GetMapping("/main")
     public String getUserPage() {
         System.out.println("call userMainPage()");
+        return "/main/index";
+    }
+
+    @GetMapping("/main2")
+    public String getUserPage2() {
+        System.out.println("call userMainPage2222()");
         return "/main/index";
     }
 }

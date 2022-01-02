@@ -3,7 +3,7 @@
 
 $("#loginForm").submit(function(e){
     event.preventDefault();
-    location.href = "/admin_login"
+    location.href = "/admin/perform_login"
 });
 
 //$("#loginForm").submit(function(e){
