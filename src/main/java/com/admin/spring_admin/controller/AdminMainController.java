@@ -33,9 +33,9 @@ public class AdminMainController {
         return "/main/index";
     }
 
-    @GetMapping("/main2")
-    public String getUserPage2() {
+    @GetMapping("/test_user")
+    public String getUserTestPage() {
         System.out.println("call userMainPage2222()");
-        return "/main/index";
+        return "/user/user_list";
     }
 }
